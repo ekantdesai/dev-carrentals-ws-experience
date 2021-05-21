@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a600496e-9923-47e5-807b-1b9285a76a13" basePath="/api">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="1fd841b8-85af-4dde-856a-097874d56ae8" basePath="/api" >
+		<http:request-connection host="localhost" port="8082" />
+	</http:request-config>
+	<flow name="dev-carrentals-ws-experience-apiFlow" doc:id="e5f96a63-96c0-425a-b637-2d1130702769" >
+		<http:listener doc:name="Listener" doc:id="82ae41ce-48cb-4036-a502-2320edf845ab" config-ref="HTTP_Listener_config" path="/rentals"/>
+		<http:request method="GET" doc:name="Request" doc:id="3a9bc846-7402-4adc-8e5b-459f1e0ccccf" config-ref="HTTP_Request_configuration" path="/rentals" responseTimeout="20000000">
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	dropoff : attributes.queryParams.dropoff,
+	pickup : attributes.queryParams.pickup
+}]]]></http:query-params>
+		</http:request>
+	</flow>
+</mule>
