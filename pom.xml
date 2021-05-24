@@ -30,8 +30,23 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				<configuration>
-				</configuration>
+								<configuration>
+				 <!--<standaloneDeployment>
+					      <muleHome>"PUT YOUR STANDALONE HOME PATH HERE"</muleHome>
+					      <muleVersion>"PUT YOUR MULE VERSION HERE"</muleVersion>
+				     </standaloneDeployment> -->
+				<cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <muleVersion>4.3.0</muleVersion>
+				      <username>ekantdesai3</username>			  
+				      <password>Ekantconflowence5!</password>
+				      <applicationName>dev-carrentals-ws-experience-api</applicationName>
+				      <environment>dev</environment>
+					  <businessGroup>Conflowence</businessGroup>
+				</cloudHubDeployment>
+				<classifier>mule-application</classifier>
+                </configuration>
+
 			</plugin>
 		</plugins>
 	</build>
