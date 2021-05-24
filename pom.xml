@@ -43,6 +43,7 @@
 				      <applicationName>dev-carrentals-ws-experience-api</applicationName>
 				      <environment>Sandbox</environment>
 					  <businessGroup>Conflowence</businessGroup>
+					  <objectStoreV2>true</objectStoreV2>
 				</cloudHubDeployment>
 				<classifier>mule-application</classifier>
                 </configuration>
