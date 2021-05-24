@@ -37,7 +37,7 @@
 				     </standaloneDeployment> -->
 				<cloudHubDeployment>
 				      <uri>https://anypoint.mulesoft.com</uri>
-				      <muleVersion>4.2.2</muleVersion>
+				      <muleVersion>4.3.0</muleVersion>
 				      <username>ekantdesai3</username>			  
 				      <password>Ekantconflowence5!</password>
 				      <applicationName>dev-carrentals-ws-experience-api</applicationName>
