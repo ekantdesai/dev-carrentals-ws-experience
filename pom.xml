@@ -41,7 +41,7 @@
 				      <username>ekantdesai3</username>			  
 				      <password>Ekantconflowence5!</password>
 				      <applicationName>dev-carrentals-ws-experience-api</applicationName>
-				      <environment></environment>
+				      
 					  <businessGroup>Conflowence</businessGroup>
 				</cloudHubDeployment>
 				<classifier>mule-application</classifier>
